@@ -37,8 +37,8 @@ $(document).ready(function () {
                 $('#users-container').append(`
                     <div class="card user-container margin-thirty">
                         <div class="card-body">
-                            Original Message: ${value['originalText']}
-                            Corporate Translation: ${value['newText']}
+                            <p><strong>Original Message:</strong> ${value['originalText']}</p>
+                            <p><strong>Corporate Translation:</strong> ${value['newText']}</p>
                             <a href="delete-translations/${value['id']}" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
