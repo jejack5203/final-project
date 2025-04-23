@@ -25,7 +25,7 @@
                             <a class="nav-link" href= "http://localhost/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/translations">My Translations</a>
+                            <a class="nav-link" href="http://localhost/translations">My Generated Translations</a>
                         </li>
                        
                     </ul>
@@ -39,12 +39,12 @@
             <h5 class="margin-thirty">For when you need to sound important while saying nothing!</h5>
             <form id="translation-form">
                 <div class="form-group margin-twenty">
-                    <label for="firstName" id="firstName-label">Original Message</label>
-                    <textarea type="text" class="form-control" id="originalText" name="originalText" placeholder="Enter Message"></textarea>
+                    <label for="firstName" id="firstName-label"><strong>Original Message </strong></label>
+                    <textarea type="text" class="form-control" id="originalText" name="originalText" placeholder="Enter a message..."></textarea>
                 </div> <br>
                 <div class="form-group margin-ten">
-                    <label for="lastName" id="lastName-label">Corporate Message</label>
-                    <textarea class="form-control" id="newText" name="newText" rows="3"></textarea>
+                    <label for="lastName" id="lastName-label"><strong>Corporate Message</strong></label>
+                    <textarea class="form-control" id="newText" name="newText"  placeholder="Corporate version will appear here" rows="3"></textarea>
                 </div> <br>
 
                 <button type="button" class="btn btn-primary generate-btn margin-twenty">Generate</button>
@@ -55,7 +55,7 @@
 
 <script>
     $(document).ready(function () {
-    // Generate button click
+    // Generate button
     $('.generate-btn').click(function() {
         const originalText = $('#originalText').val();
         
@@ -98,7 +98,7 @@
             return;
         }
         
-        // Send form data to save API
+        // Send form data
         $.ajax({
             url: 'http://localhost/api/translations',
             type: 'POST',
