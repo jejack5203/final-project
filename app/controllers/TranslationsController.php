@@ -58,7 +58,7 @@ class TranslationsController
         $apiKey = $_ENV['OPENAI_API_KEY'];
         $open_ai = new OpenAi($apiKey);
         
-        // Use chat completion with current model
+        
         $params = [
             'model' => 'gpt-3.5-turbo',  // Current model as of 2025
             'messages' => [
@@ -85,7 +85,7 @@ class TranslationsController
             exit();
         }
         
-        // Extract message from chat completion response format
+        
         if (!isset($response["choices"][0]["message"]["content"])) {
             http_response_code(400);
             echo json_encode(['error' => 'Failed to generate translation: Unexpected response format']);
